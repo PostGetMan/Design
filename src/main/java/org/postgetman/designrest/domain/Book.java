@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 public class Book extends AbstractEntity{
 
     private String title;
