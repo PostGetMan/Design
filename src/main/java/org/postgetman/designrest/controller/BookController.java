@@ -23,8 +23,18 @@ public class BookController extends BaseController{
         return service.findAll();
     }
 
+    @GetMapping("/{title}")
+    public Book findOne(@PathVariable(value = "title") final String title){
+        return service.findOne(title);
+    }
+
     @PostMapping
     public void addBook(@RequestBody BookDTO bookDTO){
         service.addBook(convert(bookDTO,Book.class));
+    }
+
+    @DeleteMapping("/delete")
+    public void deleteBook(@RequestParam(value = "title")final String title){
+        service.deleteBook(title);
     }
 }

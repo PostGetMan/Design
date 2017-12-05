@@ -14,5 +14,5 @@ public interface BookService {
 
     void addBook(Book book);
 
-    void deleteBook(Book book);
+    void deleteBook(final String name);
 }

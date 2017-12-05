@@ -4,6 +4,7 @@ import org.postgetman.designrest.domain.Book;
 import org.postgetman.designrest.service.BookService;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class BookServiceImpl implements BookService{
@@ -44,7 +45,7 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
-    public void deleteBook(Book book) {
-
+    public void deleteBook(final String title) {
+        books.removeIf(b -> b.getTitle().equals(title));
     }
 }
