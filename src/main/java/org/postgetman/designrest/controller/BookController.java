@@ -33,8 +33,8 @@ public class BookController extends BaseController{
         service.addBook(convert(bookDTO,Book.class));
     }
 
-    @DeleteMapping("/delete")
-    public void deleteBook(@RequestParam(value = "title")final String title){
+    @DeleteMapping("/{title}")
+    public void deleteBook(@PathVariable(value = "title")final String title){
         service.deleteBook(title);
     }
 }

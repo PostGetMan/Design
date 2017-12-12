@@ -9,7 +9,8 @@ import java.util.List;
 
 public class BookServiceImpl implements BookService{
 
-    private List<Book> books;
+    private static List<Book> books;
+
 
     @Override
     public List<Book> findAll() {
